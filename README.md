@@ -1,5 +1,3 @@
-[![Clojars Project](https://img.shields.io/clojars/v/clj-base64.svg)](https://clojars.org/clj-base64)
-
 # clj-base64
 
 Functions to encode and decode base64 strings.
@@ -14,10 +12,11 @@ Functions to encode and decode base64 strings.
 
 ## Installation
 
-Drop the following dependency in your <code>project.clj</code> at the
+Drop the following dependency in your <code>deps.edn</code> at the
 appropriate place:
 
-    [clj-base64 "0.0.3"]
+    clj-base64/clj-base64 {:git/url "https://github.com/insilica/clj-base64.git"
+                           :git/tag "v0.1.0"}
 
 
 ## License

@@ -5,9 +5,9 @@ Functions to encode and decode base64 strings.
 
 ## Usage
 
-    (use 'remvee.base64)
-    (encode-str "I 8> clojure!") ; => "SSA4PiBjbG9qdXJlIQ=="
-    (decode-str "SSA4PiBjbG9qdXJlIQ==") ; => "I 8> clojure!"
+    (require '[remvee.base64 :as base64])
+    (apply str (base64/encode (.getBytes "I 8> clojure!"))) ; => "SSA4PiBjbG9qdXJlIQ=="
+    (String. (byte-array (base64/decode "SSA4PiBjbG9qdXJlIQ=="))) ; => "I 8> clojure!"
 
 
 ## Installation

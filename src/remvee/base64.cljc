@@ -32,13 +32,6 @@
               3         (map f [18 12 6 0]))]
       (concat r (lazy-seq (encode (drop 3 bytes)))))))
 
-(defn encode-str
-  "Encode a string to a base64 encoded string."
-  ([string]
-   (string/join (encode (.getBytes string))))
-  ([string charset]
-   (string/join (encode (.getBytes string charset)))))
-
 (defn decode
   "Decode sequence of base64 encoded characters to a sequence of
   bytes."
@@ -52,10 +45,3 @@
                    3 [10 2]
                    4 [16 8 0]} (count t)))]
       (concat r (lazy-seq (decode (drop 4 string)))))))
-
-(defn decode-str
-  "Decode a base64 encoded string."
-  ([string]
-   (String. (bytes (byte-array (decode string)))))
-  ([string charset]
-   (String. (bytes (byte-array (decode string))) charset)))
